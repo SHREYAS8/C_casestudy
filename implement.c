@@ -14,15 +14,15 @@ void read (m_phone* specs)
     printf("Enter the display size :");
     scanf("%f", &specs->display);
     printf("Enter the battery capacity :");
-    scanf("%d", &specs->battery);
+    scanf("%u", &specs->battery);
     printf("Enter the phone memory :");
-    scanf("%d", &specs->RAM);
+    scanf("%u", &specs->RAM);
     printf("Enter the internal storage :");
-    scanf("%d", &specs->ROM);
+    scanf("%du", &specs->ROM);
     printf("Enter the camera resolution :");
-    scanf("%d", &specs->camera_res);
+    scanf("%u", &specs->camera_res);
     printf("Enter the price :");
-    scanf("%d", &specs->price);
+    scanf("%u", &specs->price);
 }
 
 void read_all (m_phone* specs, int n)
