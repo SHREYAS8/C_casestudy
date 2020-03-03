@@ -18,7 +18,7 @@ void read (m_phone* specs)
     printf("Enter the phone memory :");
     scanf("%u", &specs->RAM);
     printf("Enter the internal storage :");
-    scanf("%du", &specs->ROM);
+    scanf("%u", &specs->ROM);
     printf("Enter the camera resolution :");
     scanf("%u", &specs->camera_res);
     printf("Enter the price :");
