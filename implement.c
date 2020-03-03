@@ -37,11 +37,11 @@ void disp (m_phone* specs)
     printf("\nModel :%d", specs->model);
     printf("\nOEM :%s", specs->OEM);
     printf("\nDisplay size :%f inches", specs->display);
-    printf("\nBattery capacity :%d mAH", specs->battery);
-    printf("\nPhone memory :%d GB", specs->RAM);
-    printf("\nInternal storage :%d GB", specs->ROM);
-    printf("\nCamera resolution :%d MP", specs->camera_res);
-    printf("\nPrice :%d rs\n", specs->price);
+    printf("\nBattery capacity :%u mAH", specs->battery);
+    printf("\nPhone memory :%u GB", specs->RAM);
+    printf("\nInternal storage :%u GB", specs->ROM);
+    printf("\nCamera resolution :%u MP", specs->camera_res);
+    printf("\nPrice :%u rs\n", specs->price);
 }
 
 void disp_model (m_phone* specs, int n, int m_no)
@@ -64,7 +64,7 @@ void disp_model (m_phone* specs, int n, int m_no)
 
 float avg_p (m_phone* specs, int n)
 {
-    int i,sum;
+    int i,sum=0;
     for (i=0; i<n; i++)
        sum+= (specs+i)->price;
     return(sum/n);
@@ -72,7 +72,7 @@ float avg_p (m_phone* specs, int n)
 
 void max_batt (m_phone* specs, int n)
 {
-    int i, max_b = 0, k;
+    int i, max_b = 0, k=0;
     for (i=0; i<n; i++)
     {
         if(max_b<(specs+i)->battery)
@@ -86,7 +86,7 @@ void max_batt (m_phone* specs, int n)
 
 void max_res (m_phone* specs, int n)
 {
-    int i, max_r = 0, k;
+    int i, max_r = 0, k=0;
     for (i=0; i<n; i++)
     {
         if(max_r<(specs+i)->camera_res)
@@ -100,7 +100,7 @@ void max_res (m_phone* specs, int n)
 
 int price_model (m_phone* specs, int n, int m_p, int M_P )
 {
-    int i, k;
+    int i, k=0;
     for (i=0; i<n; i++)
     {
         if((specs+i)->price > m_p && (specs+i)->price <= M_P)
@@ -111,7 +111,7 @@ int price_model (m_phone* specs, int n, int m_p, int M_P )
 
 int ROM_min (m_phone* specs, int n)
 {
-    int i, k;
+    int i, k=0;
     for (i=0; i<n; i++)
     {
         if(((specs+i)->ROM) <= 32)
